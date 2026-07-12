@@ -1,3 +1,8 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>축구·풋살 — 경기 매칭·커뮤니티·AI 분석 플랫폼</title>
 <style>
   :root {
@@ -237,6 +242,35 @@
   footer a { color: var(--pitch); text-decoration: none; }
   a:focus-visible { outline: 2px solid var(--pitch); outline-offset: 2px; }
 
+
+  /* ── 슬라이드(장표) 프레임 ── */
+  html,body { height:100%; }
+  body { overflow:hidden; }
+  .deck { position:fixed; inset:0; overflow:hidden; background:var(--bg); }
+  .track { display:flex; height:100%; transition:transform .42s cubic-bezier(.4,0,.2,1); will-change:transform; }
+  @media (prefers-reduced-motion: reduce){ .track { transition:none; } }
+  .slide { min-width:100%; width:100%; height:100%; overflow-y:auto; overflow-x:hidden; }
+  .slide-inner { max-width:1000px; margin:0 auto; padding:44px 26px 96px; }
+  .slide-inner section { margin-top:0; }
+  .slide-hero { display:flex; }
+  .slide-hero .hero { margin:0; width:100%; min-height:100%; display:flex; align-items:center; }
+  .nav { position:fixed; top:50%; transform:translateY(-50%); z-index:30; width:46px; height:46px; border-radius:50%; border:1px solid var(--line); background:var(--paper); color:var(--ink); font-size:24px; line-height:1; cursor:pointer; box-shadow:var(--shadow); display:flex; align-items:center; justify-content:center; }
+  .nav:hover { border-color:var(--pitch); color:var(--pitch); }
+  .nav.prev { left:14px; } .nav.next { right:14px; }
+  .nav:disabled { opacity:.28; cursor:default; border-color:var(--line); color:var(--ink); }
+  .counter { position:fixed; bottom:16px; left:50%; transform:translateX(-50%); z-index:30; font-size:12.5px; font-weight:800; color:var(--ink-soft); background:var(--paper); border:1px solid var(--line); border-radius:999px; padding:5px 14px; box-shadow:var(--shadow); font-variant-numeric:tabular-nums; }
+  .dots { position:fixed; bottom:50px; left:50%; transform:translateX(-50%); display:flex; gap:7px; z-index:30; }
+  .dots button { width:9px; height:9px; border-radius:50%; border:none; background:var(--line-strong); cursor:pointer; padding:0; transition:width .2s, background .2s; }
+  .dots button.active { background:var(--pitch); width:22px; border-radius:999px; }
+  @media print {
+    body { overflow:visible; }
+    .deck { position:static; } .track { display:block; transform:none !important; }
+    .slide { height:auto; overflow:visible; page-break-after:always; }
+    .nav,.counter,.dots { display:none; }
+  }
+</style>
+</head>
+<body>
 <div class="deck">
   <div class="track" id="track">
     <div class="slide slide-hero"><div class="hero">
@@ -516,3 +550,6 @@
 })();
 </script>
 
+
+</body>
+</html>
