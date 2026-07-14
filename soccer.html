@@ -253,7 +253,8 @@
   /* US startup cards */
   .usg{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:8px;}
   @media(max-width:860px){.usg{grid-template-columns:1fr;}}
-  .usc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:9px;}
+  .usc{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:flex;flex-direction:column;gap:9px;text-decoration:none;color:inherit;}
+  .usc *{text-decoration:none;}
   .usc .uhead{display:flex;align-items:center;gap:10px;}
   .usc .unum{flex:0 0 auto;width:32px;height:32px;border-radius:8px;background:var(--acc);color:#0a0d14;font-weight:900;font-size:17px;display:flex;align-items:center;justify-content:center;}
   .usc .uname{font-size:20px;font-weight:900;color:var(--tx);}
@@ -389,8 +390,8 @@
   <div class="slide">
     <div class="inner">
       <p class="tag">Benchmark · 미국 스타트업</p>
-      <h2>미국은 <span class="hl">이 기술로 이미 앞서 있다</span></h2>
-      <p class="lede">SF·베이 반경 스타트업 4곳 — <b>AI 자세교정·픽업 매칭</b>을 현장에서 벤치마킹한다. <b>1회 출장으로 방문 가능한 반경.</b></p>
+      <h2>Startups in <span class="hl">San Francisco</span></h2>
+      <p class="lede">SF·베이 반경 스타트업 4곳 — <b>AI 자세교정·픽업 매칭</b>을 현장에서 벤치마킹한다.</p>
       <div class="usg">
         <a class="usc" href="https://tempo.fit/" target="_blank" rel="noopener">
           <div class="uhead"><span class="unum">1</span><span class="uname">Tempo <span class="ar">↗</span><span class="loc">SF 본사</span></span><span class="upill ai">AI 자세교정</span></div>
