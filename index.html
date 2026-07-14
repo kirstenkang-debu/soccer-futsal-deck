@@ -263,6 +263,10 @@
 .samsung .flow .ar{color:var(--dim)}
 
 /* ===== SOCCER DECK (scoped #sfdeck) ===== */
+/* ==== soccer CSS isolation island (renders identical to standalone) ==== */
+#sfdeck *, #sfdeck *::before, #sfdeck *::after{ all: revert; }
+#sfdeck *, #sfdeck *::before, #sfdeck *::after{ box-sizing: border-box; }
+#sfdeck{ color:var(--tx); font-family:var(--sans); line-height:1.55; -webkit-font-smoothing:antialiased; }
 :root{
     --bg:#0a0d14; --bg2:#0f141f; --card:#141b28; --card2:#171f2e; --line:#243043; --line2:#2e3b52;
     --tx:#eef2f8; --mut:#93a1b8; --dim:#5f6d84;
